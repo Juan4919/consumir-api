@@ -1,8 +1,7 @@
 import requests
-from config import *
+from config import APIKEY
 
 moneda_cripto = input("Ingrese una criptomoneda conocida: ").upper()
-APIKEY="D18934DC-4F26-4AF2-AA92-FD26C3B184FF"
 
 while moneda_cripto != "" and moneda_cripto.isalpha():
     #invocando al metodo get con la url especifica
@@ -16,9 +15,9 @@ while moneda_cripto != "" and moneda_cripto.isalpha():
 
     if r.status_code == 200:
         #print("rate: ",respuesta['rate'] )#2084.6980485137988 cambie a 2084.69€
-        print( "{:.2f}€".format(respuesta['rate']) )
+        print( "{:.2f}€".format( respuesta['rate'] ) )#2084.69€
         break
     else:
         print("error:",respuesta['error'])
 
-    moneda_cripto = input("Ingrese una criptomoneda conocida: ").upper()                    
+    moneda_cripto = input("Ingrese una criptomoneda conocida: ").upper()  

@@ -1,1 +1,1 @@
-from appcoints.utils import *
+from appcoints.config import *
